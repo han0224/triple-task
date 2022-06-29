@@ -1,7 +1,14 @@
-import { IMG } from "constants/Image";
-import styled from "styled-components";
+import { IMG } from 'constants/Image'
+import useFadeIn from 'hooks/useFadeIn'
+import { useEffect } from 'react'
+import styled from 'styled-components'
 
-const LogoContainer = styled.div`
+interface LogoContainerProps {
+  transform: string
+  opacity: number
+}
+
+const LogoContainer = styled.div<LogoContainerProps>`
   position: absolute;
   top: 150px;
   width: 400px;
@@ -13,14 +20,23 @@ const LogoContainer = styled.div`
   background-size: 400px 338px;
   background-repeat: no-repeat;
 
+  opacity: ${(props: LogoContainerProps) => props.opacity};
+  transform: translateY(${(props: LogoContainerProps) => props.transform});
+  transition: all 2s;
+
   color: rgba(58, 58, 58, 0.7);
   font-size: 15px;
   text-align: center;
-  /* font-family: sans-serif; */
-`;
+`
 
 const Logo = () => {
-  return <LogoContainer>2019년 2월 기준</LogoContainer>;
-};
+  const fadeIn = useFadeIn()
 
-export default Logo;
+  return (
+    <LogoContainer transform={fadeIn.transform} opacity={fadeIn.opacity}>
+      2019년 2월 기준
+    </LogoContainer>
+  )
+}
+
+export default Logo
