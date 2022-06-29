@@ -1,6 +1,7 @@
 {
   "name": "triple-task",
   "version": "0.1.0",
+  "prettier": "@titicaca/eslint-config-triple/prettierrc",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -21,7 +22,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier '**/*' --check",
+    "prettier:fix": "prettier '**/*' --write",
+    "lint:style": "stylelint './**/*.{js,ts,tsx}'",
+    "lint:style:fix": "stylelint './**/*.{js,ts,tsx}' --fix,"
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +45,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@titicaca/eslint-config-triple": "^3.1.0",
+    "@types/styled-components": "^5.1.25"
   }
 }

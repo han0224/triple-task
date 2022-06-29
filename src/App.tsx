@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Awards from "components/Awards";
+import Logo from "components/Logo";
+import Metrics from "components/Metrics";
+import styled from "styled-components";
+
+const ResponsiveSection = styled.div`
+  position: relative;
+  margin: 0 auto;
+  height: auto;
+  width: 1200px;
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <ResponsiveSection>
+        <Logo />
+        <Metrics />
+        <Awards />
+      </ResponsiveSection>
+    </main>
   );
 }
 
