@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 
+// output : 0~1 사이의 숫자
 const easeOutExpo = (x: number): number => {
   return x === 1 ? 1 : 1 - Math.pow(2, -10 * x)
 }
 
-const useCountUp = (maxNumber: number) => {
+const useCountUp = (maxNumber: number): number => {
   const [count, setCount] = useState(0)
   const animationTime = 2000
   const frame = 60

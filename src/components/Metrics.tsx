@@ -17,7 +17,11 @@ const MetricsItem = styled.div`
   margin-bottom: 20px;
   color: rgb(58, 58, 58);
   font-family: sans-serif;
+  strong {
+    font-weight: bold;
+  }
 `
+
 const Metrics = () => {
   const fadeIn = useFadeIn()
   const user = useCountUp(350)
@@ -26,13 +30,22 @@ const Metrics = () => {
   return (
     <MetricsContainer transform={fadeIn.transform} opacity={fadeIn.opacity}>
       <MetricsItem>
-        <strong>{user}만 명</strong>의 사용자
+        <strong>
+          <span>{user}</span>만 명
+        </strong>
+        의 사용자
       </MetricsItem>
       <MetricsItem>
-        <strong>{review}만 개</strong>의 리뷰
+        <strong>
+          <span>{review}</span>만 개
+        </strong>
+        의 리뷰
       </MetricsItem>
       <MetricsItem>
-        <strong>{save}만 개</strong>의 저장
+        <strong>
+          <span>{save}</span>만 개
+        </strong>
+        의 저장
       </MetricsItem>
     </MetricsContainer>
   )
