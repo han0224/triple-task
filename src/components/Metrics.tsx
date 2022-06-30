@@ -1,18 +1,14 @@
 import useCountUp from 'hooks/useCountUp'
 import useFadeIn from 'hooks/useFadeIn'
 import styled from 'styled-components'
+import { FadeInType } from 'types/FadeInType'
 
-interface LogoContainerProps {
-  transform: string
-  opacity: number
-}
-
-const MetricsContainer = styled.div<LogoContainerProps>`
+const MetricsContainer = styled.div<FadeInType>`
   margin-left: 623px;
   padding-top: 150px;
 
-  opacity: ${(props: LogoContainerProps) => props.opacity};
-  transform: translateY(${(props: LogoContainerProps) => props.transform});
+  opacity: ${(props: FadeInType) => props.opacity};
+  transform: translateY(${(props: FadeInType) => props.transform});
   transition: all 0.7s ease-out 0.1s;
 `
 const MetricsItem = styled.div`

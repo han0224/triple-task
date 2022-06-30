@@ -1,14 +1,9 @@
 import { IMG } from 'constants/Image'
 import useFadeIn from 'hooks/useFadeIn'
-import { useEffect } from 'react'
 import styled from 'styled-components'
+import { FadeInType } from 'types/FadeInType'
 
-interface LogoContainerProps {
-  transform: string
-  opacity: number
-}
-
-const LogoContainer = styled.div<LogoContainerProps>`
+const LogoContainer = styled.div<FadeInType>`
   position: absolute;
   top: 150px;
   width: 400px;
@@ -20,8 +15,8 @@ const LogoContainer = styled.div<LogoContainerProps>`
   background-size: 400px 338px;
   background-repeat: no-repeat;
 
-  opacity: ${(props: LogoContainerProps) => props.opacity};
-  transform: translateY(${(props: LogoContainerProps) => props.transform});
+  opacity: ${(props: FadeInType) => props.opacity};
+  transform: translateY(${(props: FadeInType) => props.transform});
   transition: all 0.7s ease-out;
 
   color: rgba(58, 58, 58, 0.7);
