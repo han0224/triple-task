@@ -1,15 +1,13 @@
 import { IMG } from 'constants/Image'
 import useFadeIn from 'hooks/useFadeIn'
 import styled from 'styled-components'
-import { FadeInType } from 'types/FadeInType'
+import { AppearAnimation } from 'styles/AppearAnimation'
 
-const AwardsContainer = styled.div<FadeInType>`
+const AwardsContainer = styled(AppearAnimation)`
   display: flex;
   margin: 50px 0px 140px 623px;
 
-  opacity: ${(props: FadeInType) => props.opacity};
-  transform: translateY(${(props: FadeInType) => props.transform});
-  transition: all 0.7s ease-out 0.2s;
+  transition-delay: 0.2s;
 `
 const AwardsItem = styled.div`
   display: inline-block;

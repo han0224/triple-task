@@ -1,9 +1,9 @@
 import { IMG } from 'constants/Image'
 import useFadeIn from 'hooks/useFadeIn'
 import styled from 'styled-components'
-import { FadeInType } from 'types/FadeInType'
+import { AppearAnimation } from 'styles/AppearAnimation'
 
-const LogoContainer = styled.div<FadeInType>`
+const LogoContainer = styled(AppearAnimation)`
   position: absolute;
   top: 150px;
   width: 400px;
@@ -15,11 +15,8 @@ const LogoContainer = styled.div<FadeInType>`
   background-size: 400px 338px;
   background-repeat: no-repeat;
 
-  opacity: ${(props: FadeInType) => props.opacity};
-  transform: translateY(${(props: FadeInType) => props.transform});
-  transition: all 0.7s ease-out;
-
   color: rgba(58, 58, 58, 0.7);
+  font-family: sans-serif;
   font-size: 15px;
   text-align: center;
 `

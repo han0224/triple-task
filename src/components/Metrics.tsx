@@ -1,15 +1,13 @@
 import useCountUp from 'hooks/useCountUp'
 import useFadeIn from 'hooks/useFadeIn'
 import styled from 'styled-components'
-import { FadeInType } from 'types/FadeInType'
+import { AppearAnimation } from 'styles/AppearAnimation'
 
-const MetricsContainer = styled.div<FadeInType>`
+const MetricsContainer = styled(AppearAnimation)`
   margin-left: 623px;
   padding-top: 150px;
 
-  opacity: ${(props: FadeInType) => props.opacity};
-  transform: translateY(${(props: FadeInType) => props.transform});
-  transition: all 0.7s ease-out 0.1s;
+  transition-delay: 0.1s;
 `
 const MetricsItem = styled.div`
   font-size: 36px;
