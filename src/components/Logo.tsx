@@ -22,7 +22,7 @@ const LogoContainer = styled.div<LogoContainerProps>`
 
   opacity: ${(props: LogoContainerProps) => props.opacity};
   transform: translateY(${(props: LogoContainerProps) => props.transform});
-  transition: all 1.2s ease-in-out 0ms;
+  transition: all 0.7s ease-out;
 
   color: rgba(58, 58, 58, 0.7);
   font-size: 15px;

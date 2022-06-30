@@ -7,11 +7,15 @@ interface LogoContainerProps {
   opacity: number
 }
 
-const AwardsContainer = styled.div`
+const AwardsContainer = styled.div<LogoContainerProps>`
   display: flex;
   margin: 50px 0px 140px 623px;
+
+  opacity: ${(props: LogoContainerProps) => props.opacity};
+  transform: translateY(${(props: LogoContainerProps) => props.transform});
+  transition: all 0.7s ease-out 0.2s;
 `
-const AwardsItem = styled.div<LogoContainerProps>`
+const AwardsItem = styled.div`
   display: inline-block;
   height: 54px;
   padding: 5px 0px 5px 62px;
@@ -22,10 +26,6 @@ const AwardsItem = styled.div<LogoContainerProps>`
   background-size: 54px 54px;
   background-position: left top;
   background-repeat: no-repeat;
-
-  opacity: ${(props: LogoContainerProps) => props.opacity};
-  transform: translateY(${(props: LogoContainerProps) => props.transform});
-  transition: all 1s ease-in-out 0.3s;
 
   font-family: sans-serif;
   font-weight: bold;
@@ -44,13 +44,13 @@ const PlayStore = styled(AwardsItem)`
 const Awards = () => {
   const fadeIn = useFadeIn()
   return (
-    <AwardsContainer>
-      <PlayStore transform={fadeIn.transform} opacity={fadeIn.opacity}>
+    <AwardsContainer transform={fadeIn.transform} opacity={fadeIn.opacity}>
+      <PlayStore>
         2018 구글 플레이스토어
         <br />
         올해의 앱 최우수상 수상
       </PlayStore>
-      <AppleStore transform={fadeIn.transform} opacity={fadeIn.opacity}>
+      <AppleStore>
         2018 애플 스토어 <br />
         오늘의 여행앱 선정
       </AppleStore>
